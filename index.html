@@ -7,7 +7,7 @@
   <body>
     <h1>Twittler</h1>
     <h3>Twitter, but better...</h3>
-    <div class="tweets">
+    <div class="main">
       <ul class="home">
         <!---tweets go here-->
       </ul>
@@ -21,12 +21,17 @@
       var updateTweets = function(){
         var $home = $('.home');
         $home.html('');
+        var time= new Date();
           //update the page with all existing tweets in a list format
           var index = streams.home.length - 1;
           while(index >= 0 && index >= streams.home.length-16){
             var tweet = streams.home[index];
-            var $tweet = $('<li></li>');
+            var $timeStamp = $('<li class = "timestamp"></li>');
+            var $tweet = $('<li class="tweet"></li>');
+            var timeStamp = tweet.created_at.getHours() + ":" + tweet.created_at.getMinutes() + ":" + tweet.created_at.getSeconds();
+            $timeStamp.text(timeStamp);
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            $timeStamp.appendTo($home);
             $tweet.appendTo($home);
             index -= 1;
           }
