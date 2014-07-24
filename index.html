@@ -3,14 +3,12 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet"
   </head>
   <body>
     <h1>Twittler</h1>
     <h3>Twitter, but better...</h3>
     <div class="main">
-      <ul class="home">
-        <!---tweets go here-->
-      </ul>
     </div>
     <script>
 
@@ -19,19 +17,16 @@
       });
 
       var updateTweets = function(){
-        var $home = $('.home');
+        var $home = $('.main');
         $home.html('');
         var time= new Date();
           //update the page with all existing tweets in a list format
           var index = streams.home.length - 1;
-          while(index >= 0 && index >= streams.home.length-16){
+          while(index >= 0 && index >= streams.home.length-11){
             var tweet = streams.home[index];
-            var $timeStamp = $('<li class = "timestamp"></li>');
-            var $tweet = $('<li class="tweet"></li>');
+            var $tweet = $('<div class="tweet"></div>');
             var timeStamp = tweet.created_at.getHours() + ":" + tweet.created_at.getMinutes() + ":" + tweet.created_at.getSeconds();
-            $timeStamp.text(timeStamp);
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $timeStamp.appendTo($home);
+            $tweet.html('<ul><li class="user">@' + tweet.user + '</li><li class="time">' + timeStamp + '</li><li class="message">' + tweet.message + '</li></ul>');
             $tweet.appendTo($home);
             index -= 1;
           }
