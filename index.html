@@ -3,11 +3,21 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-    <link rel="stylesheet"
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
   </head>
   <body>
-    <h1>Twittler</h1>
-    <h3>Twitter, but better...</h3>
+    <nav>
+      <a href="#">
+        <img src="img/logo.png" alt="Twittler" style="width:150px; height:50px">
+      </a>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">#Search</a></li>
+      </ul>
+    </nav>
     <div class="main">
     </div>
     <script>
@@ -32,7 +42,7 @@
           }
       }
 
-      setInterval(updateTweets, 1000)
+      setInterval(updateTweets, 10000)
     </script>
   </body>
 </html>
