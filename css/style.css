@@ -3,6 +3,9 @@ body{
     background-color: #E4F1FE;
 }
 
+
+/*Nav styling*/
+
 nav {
     display: inline-block;
     background-color: white;
@@ -29,3 +32,59 @@ nav li a{
 nav li a:hover{
     color: #4B77BE;
 }
+
+input[type="text"]{
+    width: 75%;
+    height: 25px;
+    font-size: 18px;
+}
+
+/*fancy button*/
+button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2.5em .5em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    color: #fef4e9;
+    border: solid 1px #6A7478;
+    background: #3E4447;
+    background: -webkit-gradient(linear, left top, left bottom, from(#3E4447), to(#000000));
+    background: -moz-linear-gradient(top,  #3E4447,  #000000);
+}
+
+button:active {
+    color: #FFF;
+    background: -webkit-gradient(linear, left top, left bottom, from(#828E93), to(#4C5356));
+    background: -moz-linear-gradient(top,  #828E93,  #4C5356);
+}
+
+button:hover {
+    background: #586064;
+    background: -webkit-gradient(linear, left top, left bottom, from(#586064), to(#282C2E));
+    background: -moz-linear-gradient(top,  #586064,  #282C2E);
+}
+.main {
+    width: 50%;
+    padding-left: 350px;
+    padding-top: 30px;
+}
+
+.main div ul li {
+    list-style: none;
+}
+
+.tweet {
+    background: white;
+    border-radius: 10px;
+}
+

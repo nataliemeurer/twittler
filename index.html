@@ -19,15 +19,24 @@
       </ul>
     </nav>
     <div class="main">
+      <input id="draft" type="text"/>
+      <button class="send" onclick="writeTweet()">Tweet it!</button>
+      <div class="home">
+
+      </div>
     </div>
     <script>
 
       $(document).ready(function(){
         updateTweets();
       });
+      $(document).keypress(function(e) {
+          if(e.which == 13 && document.getElementById("draft").value != "") {
+            writeTweet();
+      }});
 
       var updateTweets = function(){
-        var $home = $('.main');
+        var $home = $('.home');
         $home.html('');
         var time= new Date();
           //update the page with all existing tweets in a list format
@@ -36,13 +45,13 @@
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
             var timeStamp = tweet.created_at.getHours() + ":" + tweet.created_at.getMinutes() + ":" + tweet.created_at.getSeconds();
-            $tweet.html('<ul><li class="user">@' + tweet.user + '</li><li class="time">' + timeStamp + '</li><li class="message">' + tweet.message + '</li></ul>');
+            $tweet.html('<ul><li class="user">@<a href="#">' + tweet.user + '</a></li><li class="time">' + timeStamp + '</li><li class="message">' + tweet.message + '</li></ul>');
             $tweet.appendTo($home);
             index -= 1;
           }
-      }
+      };
 
-      setInterval(updateTweets, 10000)
+      setInterval(updateTweets, 10000);
     </script>
   </body>
 </html>
