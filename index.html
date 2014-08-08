@@ -47,7 +47,7 @@
             var tweet = streams.home[index];
             var $tweet = $('<div class="tweet"></div>');
             var timeStamp = tweet.created_at.getHours() + ":" + tweet.created_at.getMinutes() + ":" + tweet.created_at.getSeconds();
-            $tweet.html('<ul><li class="user">@<a href="#" class=".' + tweet.user + '">' + tweet.user + '</a></li><li class="time">' + timeStamp + '</li><li class="message">' + tweet.message + '</li></ul>');
+            $tweet.html('<ul><li class="user"><a href = "#" onclick="showHistory(\'' + tweet.user + '\')">@' + tweet.user + '</a></li><li class="time">' + timeStamp + '</li><li class="message">' + tweet.message + '</li></ul>');
             $tweet.appendTo($home);
             index -= 1;
           }
@@ -67,9 +67,7 @@
             $tweet.appendTo($timeline);
             index -= 1;
           }
-
       }
-
       setInterval(updateTweets, 10000);
     </script>
   </body>

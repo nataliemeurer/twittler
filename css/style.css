@@ -6,6 +6,17 @@ body{
 
 /*Nav styling*/
 
+a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    color: black;
+}
+
 nav {
     display: inline-block;
     background-color: white;
@@ -45,7 +56,7 @@ button {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    font: 14px/100% Arial, Helvetica, sans-serif;
+    font: 16px;
     padding: .5em 2.5em .5em;
     text-shadow: 0 1px 1px rgba(0,0,0,.3);
     -webkit-border-radius: .5em;
@@ -86,12 +97,50 @@ button:hover {
 .tweet {
     background: white;
     border-radius: 10px;
+    margin: 5px;
+}
+
+.tweet ul {
+    padding: 3px 5px;
+}
+
+.user{
+    float: left;
+}
+
+.time {
+    font-size: 10px;
+    color: grey;
+    float: right;
+    margin: 10px 10px;
+}
+
+.message {
+    clear: both;
+    font-size: 16px;
 }
 
 .timeline {
+    margin-top: 40px;
+    border-radius: 10px 0px 0px 10px;
     width: 25%;
+    padding-left: 10px;
     float: right;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     display: inline-block;
+}
+
+.timeHist {
+    font-size: 12px;
+    color: grey;
+}
+
+.tweetHist {
+    border-top: 1px solid #2c3e50;
+}
+
+.tweetHist ul{
+    list-style:none;
+    padding: 0;
 }
